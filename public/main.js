@@ -28,6 +28,10 @@ window.addEventListener("load", function(){ //when page loads
 
 //Update gpio feedback when server changes LED state
 socket.on('GPIO26', function (data) {  
+  if	(data){
+    data = 0
+  }
+  else data = 1
 //  console.log('GPIO26 function called');
 //  console.log(data);
   var myJSON = JSON.stringify(data);
@@ -55,15 +59,15 @@ function ReportTouchStart(e) {
   }
 
   if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 1); 
-    toggler.checked = 1;
+    socket.emit("GPIO26", 0); 
+    toggler.checked = 0;
   } 
 }
 
 function ReportTouchEnd(e) {
   if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 0); 
-    toggler.checked = 0;
+    socket.emit("GPIO26", 1); 
+    toggler.checked = 1;
   } 
 }
 
@@ -81,15 +85,15 @@ function ReportMouseDown(e) {
   
   if (e.target.id === "GPIO26M") {
  //   console.log("GPIO26 pressed");
-    socket.emit("GPIO26", 1); 
-    toggler.checked = 1;
+    socket.emit("GPIO26", 0); 
+    toggler.checked = 0;
   }
 }
 
 function ReportMouseUp(e) {
   if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 0); 
-    toggler.checked = 0;
+    socket.emit("GPIO26", 1); 
+    toggler.checked = 1;
   } 
 }
 
