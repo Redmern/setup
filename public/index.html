@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Steve's Projects">
+    <title>Pi GPIO</title>
+    <link rel="icon" type="image/png" href="../images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+   </head>
+
+<body oncopy="return false" oncut="return false" onpaste="return false">
+  
+  <div class="noselect">
+    <div class="GpioContainer">
+      <strong>GPIO26</strong>
+      <br>
+        <label class="switch">
+          <input type="checkbox" id="GPIO26" disabled >
+          <span class="slider round"></span>
+        </label>	
+      <br>
+        <button id="GPIO26M"></button>
+      <br>
+    </div>
+  <div class="dim-slider">
+    <input type="range" min="0" max="100" value="0" class="dim-slider-input" id="GPIO12">
+    <p>Value: <span id="value"></span></p>
+  </div>    
+
+
+  <!-- include socket.io client side script -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="main.js"></script>
+
+</body>
+</html> 
